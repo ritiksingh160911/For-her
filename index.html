@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>For You ❤️</title>
+  <style>
+    body {
+      margin:0; 
+      height:100vh; 
+      display:flex; 
+      align-items:center; 
+      justify-content:center;
+      font-family: system-ui, sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #fff8e6);
+      overflow:hidden;
+    }
+    /* Floating background hearts */
+    .bg-heart {
+      position:absolute;
+      font-size: 20px;
+      color:#ff5c9e;
+      opacity:0.6;
+      animation: floatUp 8s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.8); opacity:0; }
+      20% { opacity:0.8; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity:0; }
+    }
+
+    /* Message card */
+    .wrap {
+      background: rgba(255,255,255,0.92);
+      padding: 30px; 
+      border-radius: 18px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+      text-align: center;
+      z-index:10;
+    }
+    .hearts {
+      font-size: 52px; 
+      animation: beat 1.3s infinite; 
+      margin-bottom: 14px;
+    }
+    @keyframes beat {
+      0%,100%{transform:scale(.9);} 
+      50%{transform:scale(1.15);}
+    }
+    p {
+      font-size: 20px; 
+      margin:0; 
+      background:#fffafc; 
+      padding:12px 16px; 
+      border-radius:10px; 
+      line-height:1.4;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating hearts background -->
+  <script>
+    const heartEmojis = ["💖","💕","💘","❤️","💓","💞"];
+    for(let i=0;i<30;i++){
+      let h = document.createElement("div");
+      h.className="bg-heart";
+      h.textContent = heartEmojis[Math.floor(Math.random()*heartEmojis.length)];
+      h.style.left = Math.random()*100 + "vw";
+      h.style.fontSize = (16+Math.random()*30) + "px";
+      h.style.animationDuration = (5+Math.random()*5) + "s";
+      h.style.animationDelay = (Math.random()*5) + "s";
+      document.body.appendChild(h);
+    }
+  </script>
+
+  <!-- Center message -->
+  <div class="wrap">
+    <div class="hearts">💖 💕 💘 ❤️</div>
+    <p><b>Hey!! My Love❤️</b> i made this only for you cuz you deserve all of this💗. I Love You baby😚. <br>i know exams ki bjh se busy h but chlega tu ache se pdh</br> Im always with you my girl💝 and dont think anything else im here with you and I Love You
+💌. <br>babe you mean world to me.</br>your Eyes👀,Your smile😗 and everythink about you im just in love im obsessed with you baby💌</br>I love You again jitna bhi bolu hmesha kam hi lgta h <br><B> I love you💖, MY LOVE 💖</B></br></p>
+  </div>
+</body>
+</html>
